@@ -3,6 +3,7 @@ const { check } = require('express-validator');
 const {
     validateFields,
     validateJWT,
+    validateBlacklist,
 } = require('../middlewares');
 
 const { UserExistsById, emailExists } = require('../helpers/db-validators');
@@ -46,6 +47,7 @@ router.patch('/:id/active', [
 ], activateUser);
 router.get('/:id', [
     validateJWT,
+    validateBlacklist,
     check('id', 'Not a valid id').isMongoId(),
     check('id').custom(UserExistsById),
     validateFields

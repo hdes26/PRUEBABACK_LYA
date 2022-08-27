@@ -13,11 +13,7 @@ router.post('/',[
     check('password', 'Password is required').not().isEmpty(),
     validateFields
 ],login );
-router.delete('/',[
-    check('correo', 'Email is required').isEmail(),
-    check('password', 'Password is required').not().isEmpty(),
-    validateFields
-],logout );
+router.delete('/',logout );
 
 
 

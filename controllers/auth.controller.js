@@ -16,7 +16,7 @@ const login = async (req, res = response) => {
 const logout = async (req, res = response) => {
 
     try {
-        let logout = await logoutService(req.body);
+        let logout = await logoutService(req.headers);
         res.json(logout);
     } catch (error) {
         console.log(error);

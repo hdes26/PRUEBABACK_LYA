@@ -1,6 +1,7 @@
 const bcryptjs = require('bcryptjs');
 
 const User = require('../models/user');
+const Blacklist = require('../models/blacklist');
 
 const { generateJWT } = require('../helpers/generate-jwt');
 
@@ -26,8 +27,9 @@ const loginService = async (userdata) => {
 
     return { user, token }
 }
-const logoutService = async (userdata) => {
-    return 'hola'
+const logoutService = async ({authorization:token}) => {
+    const blacklist = new Blacklist({ token });
+    return await blacklist.save();
 }
 
 
