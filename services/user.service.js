@@ -1,32 +1,32 @@
 const bcryptjs = require('bcryptjs');
 const User = require('../models/user');
 
-const list = async () => {
+const listService = async () => {
 
     const user = User.find({ active: true });
     return user;
 
 }
-const listById = async (id) => {
+const listByIdService = async (id) => {
 
     const user = await User.findById(id).where({ active: true });
     return user;
 
 }
-const create = async (userdata) => {
+const createService = async (userdata) => {
     const { name, correo, password } = userdata;
     const user = new User({ name, correo, password });
 
     //Encrypt password
     const salt = bcryptjs.genSaltSync();
     user.password = bcryptjs.hashSync(password, salt)
-;
+        ;
     //Save in db
     return await user.save();
 
 }
 
-const update = async (id, userdata) => {
+const updateService = async (id, userdata) => {
 
     const { uid, password, correo, ...resto } = userdata
 
@@ -43,22 +43,22 @@ const update = async (id, userdata) => {
 }
 
 
-const remove = async (id) => {
+const removeService = async (id) => {
     const user = await User.findByIdAndRemove(id);
     return user;
 }
 
-const activate = async (id) => {
+const activateService = async (id) => {
     const user = await User.findByIdAndUpdate(id, { active: true });
     return user;
 }
 
 
 module.exports = {
-    list,
-    listById,
-    create,
-    update,
-    remove,
-    activate
+    listService,
+    listByIdService,
+    createService,
+    updateService,
+    removeService,
+    activateService
 }

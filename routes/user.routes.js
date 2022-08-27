@@ -36,24 +36,24 @@ router.delete('/:id', [
     validateJWT,
     check('id', 'Not a valid id').isMongoId(),
     check('id').custom(UserExistsById),
-    validarCampos
+    validateFields
 ], deleteUser);
 router.patch('/:id/active', [
     validateJWT,
     check('id', 'Not a valid id').isMongoId(),
     check('id').custom(UserExistsById),
-    validarCampos
+    validateFields
 ], activateUser);
 router.get('/:id', [
     validateJWT,
     check('id', 'Not a valid id').isMongoId(),
     check('id').custom(UserExistsById),
-    validarCampos
+    validateFields
 ], getUser);
 
 router.get('/', [
     validateJWT,
-    validarCampos
+    validateFields
 ], getUsers);
 
 
