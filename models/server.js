@@ -6,12 +6,18 @@ class Server {
   constructor() {
     this.app = express();
     this.port = process.env.PORT;
+    this.paths = {
+      usuarios: "/users",
+    };
 
     //Conectar a base de datos
     this.conectarDB();
 
     //Middlewares
     this.middlewares();
+
+    // Rutas
+    this.routes();
   }
 
   async conectarDB() {
@@ -27,6 +33,10 @@ class Server {
 
     //Directorio publico
     this.app.use(express.static("public"));
+  }
+
+  routes() {
+    this.app.use(this.paths.usuarios, require("../routes/user.routes"));
   }
 
   listen() {
