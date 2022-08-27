@@ -14,13 +14,13 @@ const listById = async (id) => {
 
 }
 const create = async (userdata) => {
-    const { name, email, password } = userdata;
-    const user = new User({ name, email, password });
+    const { name, correo, password } = userdata;
+    const user = new User({ name, correo, password });
 
     //Encrypt password
     const salt = bcryptjs.genSaltSync();
     user.password = bcryptjs.hashSync(password, salt)
-
+;
     //Save in db
     return await user.save();
 
@@ -28,7 +28,7 @@ const create = async (userdata) => {
 
 const update = async (id, userdata) => {
 
-    const { uid, password, email, ...resto } = userdata
+    const { uid, password, correo, ...resto } = userdata
 
     // Validate password
     if (password) {
