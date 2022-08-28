@@ -5,7 +5,7 @@ const {sendMessageService} = require("../services/message.service");
 const sendMessage = async (req, res = response) => {
 
     try {
-        let message = await sendMessageService(req.headers);
+        let message = await sendMessageService(req.body);
         res.json(message);
     } catch (error) {
         console.log(error);
