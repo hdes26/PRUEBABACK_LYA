@@ -28,7 +28,7 @@ const createService = async (userdata) => {
 
 const updateService = async (id, userdata) => {
 
-    const { uid, password, correo, ...resto } = userdata
+    const { uid, password, ...resto } = userdata
 
     // Validate password
     if (password) {
