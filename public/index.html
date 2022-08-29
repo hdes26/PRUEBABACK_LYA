@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba lya</title>
 </head>
+
 <body style="background-color: black;">
     <pre style="color: rgb(7, 194, 7);">
          _    _ _   _       _____ _              _    _                               
@@ -34,21 +36,30 @@
                 |  \ |___ |    |__| ___] |  |  |__| |  \   |   
             </pre>
         </a>
-        
-        <a href="https://www.postman.com/aerospace-physicist-8387640/workspace/api-prueba/overview" style="text-decoration: none;">
+
+        <a href="https://www.postman.com/aerospace-physicist-8387640/workspace/api-prueba/overview"
+            style="text-decoration: none;">
             <pre style="color: red;">
                 ___  ____ ____ ___ _  _ ____ _  _ 
                 |__] |  | [__   |  |\/| |__| |\ | 
                 |    |__| ___]  |  |  | |  | | \| 
-            </pre>                    
+            </pre>
         </a>
-        <a href="http://localhost:8080/api-doc/" style="text-decoration: none;">
+
+
+        <a href="http://localhost:8080/api-doc/" style="text-decoration: none;" id="swagger">
             <pre style="color: red;">
                 ____ _ _ _ ____ ____ ____ ____ ____ 
                 [__  | | | |__| | __ | __ |___ |__/ 
                 ___] |_|_| |  | |__] |__] |___ |  \
-            </pre>                    
+            </pre>
         </a>
     </div>
+
+    <script>
+        var swaggerElement = document.getElementById('swagger');
+        swaggerElement.ref =  `${window.location}api-doc`
+    </script>
 </body>
+
 </html>
