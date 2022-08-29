@@ -29,7 +29,7 @@ npm start
 [Repositorio Github](https://github.com/hdes26/PRUEBABACK_LYA) 
 
 
-[Worspace Postman](https://lunar-equinox-908337.postman.co/workspace/23881895-dda4-4e80-a414-b14100d2a1d2)
+[Worspace Postman](https://www.postman.com/lunar-equinox-908337/workspace/api-prueba/overview)
 
 
 
