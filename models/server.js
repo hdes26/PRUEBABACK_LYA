@@ -17,6 +17,9 @@ const swaggerSpec = {
       {
         url:`http://localhost:${process.env.PORT}`
       },
+      {
+        url:`https://https://prueba-tecnica-lya.herokuapp.com:${process.env.PORT}`
+      },
     ],
   },
   apis:[`${path.join(__dirname, "../routes/*.js")}`],
